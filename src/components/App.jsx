@@ -9,6 +9,12 @@ import RegisterView from '../views/RegisterView';
 import ContactsView from '../views/ContactsView';
 import { authOperations } from '../redux/auth';
 
+// const HomeView = lazy(() => import('../views/HomeView'));
+// const RegisterView = lazy(() => import('../views/RegisterView'));
+// const LoginView = lazy(() => import('../views/LoginView'));
+// const ContactsView = lazy(() => import('../views/ContactsView'));
+// const UploadView = lazy(() => import('./views/UploadView'));
+
 function App() {
   const dispatch = useDispatch();
 
@@ -25,6 +31,9 @@ function App() {
         <Route path="/register" element={<RegisterView />} />
         <Route path="/login" element={<LoginView />} />
         <Route path="/contacts" element={<ContactsView />} />
+        {/* <PrivateRoute path="/contacts" redirectTo="/login">
+        <ContactsView />
+              </PrivateRoute> */}
       </Routes>
     </Container>
   );
