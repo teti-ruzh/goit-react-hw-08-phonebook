@@ -1,0 +1,56 @@
+.form {
+  width: 320px;
+  display: flex;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 8px;
+  margin-bottom: 24px;
+  background-color: rgb(143, 129, 248);
+  gap: 10px;
+  border-radius: 4px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input {
+  display: flex;
+  width: 300px;
+  padding: 10px;
+  border-radius: 4px;
+  /* border: 0; */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  min-width: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-radius: 4px;
+  border: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  color: white;
+  background-color: rgb(46, 14, 126);
+  text-align: center;
+
+  cursor: pointer;
+
+  transition: background-color 250ms var(--timing-function);
+}
+
+.button:hover {
+  background-color: rgb(71, 27, 193);
+}

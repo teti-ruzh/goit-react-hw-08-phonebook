@@ -1,37 +1,32 @@
-import ContactForm from './ContactForm';
-import Filter from './Filter';
-import ContactList from './ContactList';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
-import { selectError, selectIsLoading } from 'redux/selectors';
-import css from './App.module.css';
+import { Routes, Route } from 'react-router-dom';
+import Container from './Container';
+import AppBar from './AppBar';
+import HomeView from '../views/HomeView';
+import LoginView from '../views/LoginView';
+import RegisterView from '../views/RegisterView';
+import ContactsView from '../views/ContactsView';
+import { authOperations } from '../redux/auth';
 
 function App() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(authOperations.fetchCurrentUser());
   }, [dispatch]);
 
   return (
-    <div className={css.container}>
-      <div className={css.content}>
-        <h1 className={css.title}>Phonebook</h1>
-        <ContactForm />
-      </div>
+    <Container>
+      <AppBar />
 
-      <div className={css.content}>
-        <h2 className={css.title}>Contacts</h2>
-        <Filter />
-        {isLoading && !error && (
-          <b className={css.subtitle}>Request in progress...</b>
-        )}
-        <ContactList />
-      </div>
-    </div>
+      <Routes>
+        <Route exact path="/" element={<HomeView />} />
+        <Route path="/register" element={<RegisterView />} />
+        <Route path="/login" element={<LoginView />} />
+        <Route path="/contacts" element={<ContactsView />} />
+      </Routes>
+    </Container>
   );
 }
 
