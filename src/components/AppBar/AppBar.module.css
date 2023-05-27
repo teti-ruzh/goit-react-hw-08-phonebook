@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #2a363b;
+  margin-bottom: 24px;
+  padding: 15px;
+  box-shadow: rgba(120, 147, 230, 0.4) 0px 7px 5px -5px,
+    rgba(120, 147, 230, 0.3) 0px 14px 5px -5px,
+    rgba(120, 147, 230, 0.2) 0px 21px 5px -5px,
+    rgba(120, 147, 230, 0.1) 0px 25px 5px -5px;
 }

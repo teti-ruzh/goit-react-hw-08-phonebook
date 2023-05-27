@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/authOperations';
 
@@ -6,26 +5,6 @@ import css from './Login.module.css';
 
 export default function Login() {
   const dispatch = useDispatch();
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-
-  // const handleChange = ({ target: { name, value } }) => {
-  //   switch (name) {
-  //     case 'email':
-  //       return setEmail(value);
-  //     case 'password':
-  //       return setPassword(value);
-  //     default:
-  //       return;
-  //   }
-  // };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   dispatch(authOperations.logIn({ email, password }));
-  //   setEmail('');
-  //   setPassword('');
-  // };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -40,24 +19,29 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login Page </h1>
+    <div className={css.wrapper}>
+      <div className={css.content}>
+        <h1 className={css.title}>Login to your account</h1>
+        <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
+          <input
+            className={css.inputLine}
+            type="email"
+            name="email"
+            placeholder="Email"
+          />
 
-      <form onSubmit={handleSubmit} className={css.form} autoComplete="off">
-        <label className={css.label}>
-          Email
-          <input className={css.input} type="email" name="email" />
-        </label>
+          <input
+            className={css.inputLine}
+            type="password"
+            name="password"
+            placeholder="Password"
+          />
 
-        <label className={css.label}>
-          Password
-          <input className={css.input} type="password" name="password" />
-        </label>
-
-        <button className={css.button} type="submit">
-          Sign In
-        </button>
-      </form>
+          <button className={css.button} type="submit">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

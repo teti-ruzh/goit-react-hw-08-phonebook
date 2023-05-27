@@ -33,3 +33,7 @@ ul {
 a {
   text-decoration: none;
 }
+
+body {
+  background: linear-gradient(#8ca6db, #b993d6);
+}
